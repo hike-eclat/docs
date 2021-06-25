@@ -12,7 +12,13 @@ Contents:
    :maxdepth: 2
    :glob:
 
-   *
+   intro
+   quickstart
+   installation
+   architecture
+   contributing
+   history
+   usage
 
 
 
