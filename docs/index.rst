@@ -18,6 +18,7 @@ Contents:
    architecture
    contributing
    history
+   HIKe programs
    usage
 
 
