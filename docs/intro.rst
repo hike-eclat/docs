@@ -1,5 +1,5 @@
-Introduction to HIKe - eCLAT
-============================
+Introduction to HIKe - eCLAT version 2
+======================================
 
 **HIKe** and **eCLAT** are an **open source** software framework for Linux that provides ...
 
