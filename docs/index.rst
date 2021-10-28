@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to HIKe - eCLAT documentation version 3!
+Welcome to HIKe - eCLAT documentation version 4!
 ==================================================
 
 Contents:
@@ -12,6 +12,14 @@ Contents:
    :maxdepth: 2
    :glob:
 
+   intro
+   quickstart
+   installation
+   architecture
+   contributing
+   history
+   HIKe programs
+   usage
 
 Indices and tables
 ==================
