@@ -6,11 +6,10 @@
 Welcome to HIKe - eCLAT documentation version 4!
 ==================================================
 
-Contents:
 
 .. toctree::
    :maxdepth: 2
-   :glob:
+   :caption: Contents:
 
    intro
    quickstart
@@ -21,10 +20,10 @@ Contents:
    HIKe programs
    usage
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. Indices and tables
+.. ==================
+.. 
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
 
