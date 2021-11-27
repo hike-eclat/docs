@@ -1,1 +1,4 @@
-.. include:: ../HISTORY.rst
+History
+-------
+
+* version 1.0
