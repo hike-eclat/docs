@@ -1,1 +1,4 @@
-.. include:: ../CONTRIBUTING.rst
+Contributing
+------------
+
+The contributions is made by anonymous authors
