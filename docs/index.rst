@@ -23,7 +23,9 @@ Welcome to HIKe - eCLAT documentation
    contributing
    history
  
-    DEBUG: documentation version 5
+.. tip::
+
+   DEBUG: documentation version 5
 
 .. Indices and tables
 .. ==================
