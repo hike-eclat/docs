@@ -15,6 +15,11 @@
 import sys
 import os
 
+import recommonmark
+from recommonmark.transform import AutoStructify
+
+from recommonmark.parser import CommonMarkParser
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -36,6 +41,10 @@ extensions = ['sphinx.ext.autodoc',
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+source_parsers = {
+    '.md': 'recommonmark.parser.CommonMarkParser',
+}
 
 # The suffix of source filenames.
 source_suffix = ['.rst', '.md']
