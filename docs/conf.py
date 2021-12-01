@@ -15,11 +15,6 @@
 import sys
 import os
 
-import recommonmark
-from recommonmark.transform import AutoStructify
-
-from recommonmark.parser import CommonMarkParser
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -33,18 +28,15 @@ from recommonmark.parser import CommonMarkParser
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
+extensions = [
+              'sphinx.ext.autodoc',
               'sphinx.ext.extlinks',
-              'sphinx.ext.ifconfig',
-              'sphinx_markdown_tables',
+              'sphinxcontrib.spelling',
+              'myst_parser',
              ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-
-source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
-}
 
 # The suffix of source filenames.
 source_suffix = ['.rst', '.md']
@@ -107,12 +99,14 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
 
+myst_heading_anchors = 2
 
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+#html_theme = 'default'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
