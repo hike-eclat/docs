@@ -31,8 +31,6 @@ import os
 extensions = [
               'sphinx.ext.autodoc',
               'sphinx.ext.extlinks',
-              'sphinxcontrib.spelling',
-              'myst_parser',
              ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -98,8 +96,6 @@ pygments_style = 'sphinx'
 
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
-
-myst_heading_anchors = 2
 
 # -- Options for HTML output ----------------------------------------------
 
