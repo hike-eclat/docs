@@ -11,7 +11,7 @@ Welcome to HIKe - eCLAT documentation
    :maxdepth: 2
    :caption: Contents:
 
-   intro.md
+   intro
    architecture
    quickstart
    installation
