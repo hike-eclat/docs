@@ -14,4 +14,3 @@ eCLAT
 -----
 
 eCLAT (eBPF Chains Language And Toolset) is a high level language and programming framework. A developer can write eCLAT scripts in a python-like language to compose HIKe eBPF programs, with no need of understanding the complex details of regular eBPF programming.
-Introduction of eCLAT  
