@@ -2,6 +2,4 @@
 Installation
 ============
 
-Install the package with pip::
-
-    $ pip install read-the-docs-template
+Source code repositories: https://github.com/hike-eclat?tab=repositories
