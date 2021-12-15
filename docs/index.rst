@@ -15,6 +15,7 @@ Welcome to HIKe - eCLAT documentation
    architecture
    quickstart
    installation
+   experiment_ddos_double_token_bucket
    developing_hike
    developing_eclat
    usage
