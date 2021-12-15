@@ -1,7 +1,7 @@
 Introduction to HIKe - eCLAT
 ============================
 
-**HIKe** and **eCLAT** are an **open source** software framework for Linux for eBPF programming. 
+**HIKe** and **eCLAT** are an **open source** software framework for eBPF programming (in Linux networking). 
 
 
 HIKe
