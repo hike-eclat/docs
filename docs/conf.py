@@ -89,45 +89,7 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-#pygments_style = 'sphinx'
-
-# Syntax highlighting of code blocks
-import pygments.styles, pygments.token
-
-def monkeypatch_pygments(name, base_name='default', attrs={}):
-    import importlib, sys
-    base_module = importlib.import_module('.'.join(['pygments', 'styles', base_name]))
-
-    def name_to_class_name(name):
-        return name.capitalize() + 'Style'
-    base_class = getattr(base_module, name_to_class_name(base_name))
-    styles = getattr(base_class, 'styles', {}).copy()
-    styles.update(attrs.pop('styles', {}))
-    attrs['styles'] = styles
-    class_name = name_to_class_name(name)
-    Style = type(class_name, (base_class,), attrs)
-    module = type(base_module)(name)
-    setattr(module, class_name, Style)
-    setattr(pygments.styles, name, module)
-    pygments.styles.STYLE_MAP[name] = f'{name}::{class_name}'
-    sys.modules['.'.join(['pygments', 'styles', name])] = module
-
-pygments_style = 'our_custom'  # Arbitrary name of new style
-
-monkeypatch_pygments(
-    pygments_style,
-    'sphinx',  # Name of base style to use
-    {
-        # Changes to base style
-        'styles': {
-            pygments.token.Comment.Single:       '#408090'
-        },
-    },
-)
-
-
-
-
+pygments_style = 'sphinx'
 
 
 # A list of ignored prefixes for module index sorting.
