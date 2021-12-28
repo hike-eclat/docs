@@ -7,6 +7,7 @@ The architecture is composed of two layers, eCLAT and HIKe. eCLAT offers a simpl
 
 .. image:: HIke-eCLAT-overall.png
    :width: 300pt
+   :align: center
 
 eCLAT
 ----
