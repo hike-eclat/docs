@@ -19,7 +19,7 @@ There are three namespaces:
 
 The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is attached to the XDP hook on the incoming interface enp6s0f0. The TG is the namespace in which we generate traffic to be processed by our HIKe / eCLAT framework. The COLLECTOR namespace is used in some examples in which we redirect some incoming packets to the outgoing interface cl0 of the SUT.
 
-::
+.. code-block:: none
 
    #      +------------------+      +------------------+
    #      |        TG        |      |       SUT        |
