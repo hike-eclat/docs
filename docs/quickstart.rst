@@ -35,7 +35,7 @@ The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is att
    #                                |         + veth0|
    #                                |                |
    #                                |    COLLECTOR   |
-   #                                +----------------+
+   #    .. code-block:: php                            +----------------+
 
 There are 7 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
 
