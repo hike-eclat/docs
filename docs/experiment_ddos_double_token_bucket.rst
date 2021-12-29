@@ -1,4 +1,4 @@
-A sample experiment (DDoS mitigation)
+Example experiment (DDoS mitigation)
 =====================================
 
 In this experiment, we combine 7 HIKe programs inside an eCLAT script to implement a DDOS mitigation scenario.
