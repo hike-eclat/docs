@@ -9,7 +9,7 @@ The source code of the eCLATscripts is reported `below <eCLAT script>`_.
 
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
-Inside the container run:
+To execture the experiment, run the following command in the HIKe / eCLAT container:
 
 .. code-block:: shell
 
