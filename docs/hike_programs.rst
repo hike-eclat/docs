@@ -26,12 +26,15 @@ ip6_hset_srcdst(u64 action)
 Hashset on ipv6 (src,dst)
 
 Take the action argument (ARG2) in input.
+
 ARG2 == LOOKUP: check whether the packet is in
- the hashset or not;
+the hashset or not;
+
 ARG2 == ADD: add the packet to the hashset if
- it is not already present;
+it is not already present;
+
 ARG2 == LOOKUP_AND_CLEAN: add the packet to the
- hashset if it is not already present and clean up an expired entry.
+hashset if it is not already present and clean up an expired entry.
 
 ip6_sd_dec2zero(u64 count)
 ------------------
