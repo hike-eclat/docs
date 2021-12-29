@@ -10,4 +10,4 @@ Option 1. Working with offline and preinstalled doker image, on LINUX
 
 Option 2. Downloading the source code and building your docker image 
 
-#. Follow the instructions to dowload, build and execute the container available :doc:`here<installation>`
+#. Follow :doc:`these instructions<installation>` to dowload, build and execute the container. 
