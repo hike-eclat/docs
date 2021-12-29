@@ -61,59 +61,59 @@ eCLAT script
 
 .. code-block:: python
 
-#
-# ddos_tb_2_levels
-# (ddos_tb_2_levels_sample_cst.eclat)
-#
-# # token bucket monitor per ip6 dst 
-# the out-profile packets are processed by a token bucket per src,dst
-# -> black lists the (src,dst) out-profile
-# for a time interval (e.g. 10 s) which is defined in ip6_hset.h: HIKE_IPV6_HSET_EXP_TIMEOUT_NS
-# token bucket parameters (rate, bucket) are defined in tb_defs.h
-# redirects a packet every 500 packets to an interface
-
-from programs.mynet import hike_drop, hike_pass,  ip6_hset_srcdst, ip6_sd_tbmon, monitor, ip6_dst_tbmon, ip6_sd_dec2zero, l2_redirect
-from loaders.basic import ip6_sc
-
-# send all IPv6 packets to our chain
-ip6_sc[ipv6_sc_map] = { (0): (ddos_tb_2_lev) }
-ip6_sc.attach('DEVNAME', 'xdp')
-
-def ddos_tb_2_lev():
-    PASS=0; DROP=1; REDIRECT=2
-    ADD=1; LOOKUP=2
-    BLACKLISTED = 0
-    REDIRECT_IF_INDEX = 6
-    IN_PROFILE = 0
-    
-    # (src,dest) in blacklist ?
-    u64 : res = ip6_hset_srcdst(LOOKUP)
-    if res == BLACKLISTED:
-        # redirect one packet out of 500
-        res = ip6_sd_dec2zero(500)
-        if res == 0:
-            monitor(REDIRECT)
-            l2_redirect(REDIRECT_IF_INDEX) 
-            return 0
-
-        monitor(DROP)
-        hike_drop()
-        return 0
-    
-    # check the rate per (dst)
-    res = ip6_dst_tbmon()
-    if res != IN_PROFILE:
-        # check the rate per (src,dst)
-        res = ip6_sd_tbmon()
-        if res != IN_PROFILE:
-            # add (src,dest) to blacklist
-            ip6_hset_srcdst(ADD)
-            monitor(DROP)
-            hike_drop()
-            return 0
+ #
+ # ddos_tb_2_levels
+ # (ddos_tb_2_levels_sample_cst.eclat)
+ #
+ # # token bucket monitor per ip6 dst 
+ # the out-profile packets are processed by a token bucket per src,dst
+ # -> black lists the (src,dst) out-profile
+ # for a time interval (e.g. 10 s) which is defined in ip6_hset.h: HIKE_IPV6_HSET_EXP_TIMEOUT_NS
+ # token bucket parameters (rate, bucket) are defined in tb_defs.h
+ # redirects a packet every 500 packets to an interface
+ 
+ from programs.mynet import hike_drop, hike_pass,  ip6_hset_srcdst, ip6_sd_tbmon, monitor, ip6_dst_tbmon, ip6_sd_dec2zero, l2_redirect
+ from loaders.basic import ip6_sc
+ 
+ # send all IPv6 packets to our chain
+ ip6_sc[ipv6_sc_map] = { (0): (ddos_tb_2_lev) }
+ ip6_sc.attach('DEVNAME', 'xdp')
+ 
+ def ddos_tb_2_lev():
+     PASS=0; DROP=1; REDIRECT=2
+     ADD=1; LOOKUP=2
+     BLACKLISTED = 0
+     REDIRECT_IF_INDEX = 6
+     IN_PROFILE = 0
+     
+     # (src,dest) in blacklist ?
+     u64 : res = ip6_hset_srcdst(LOOKUP)
+     if res == BLACKLISTED:
+         # redirect one packet out of 500
+         res = ip6_sd_dec2zero(500)
+         if res == 0:
+             monitor(REDIRECT)
+             l2_redirect(REDIRECT_IF_INDEX) 
+             return 0 
+ 
+         monitor(DROP)
+         hike_drop()
+         return 0
+     
+     # check the rate per (dst)
+     res = ip6_dst_tbmon()
+     if res != IN_PROFILE:
+         # check the rate per (src,dst)
+         res = ip6_sd_tbmon()
+         if res != IN_PROFILE:
+             # add (src,dest) to blacklist
+             ip6_hset_srcdst(ADD)
+             monitor(DROP)
+             hike_drop()
+             return 0
             
-    monitor(PASS)
-    hike_pass()
-    return 0
+     monitor(PASS)
+     hike_pass()
+     return 0
 
 
