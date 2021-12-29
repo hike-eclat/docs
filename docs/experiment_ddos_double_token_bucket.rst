@@ -1,6 +1,9 @@
 A sample experiment (DDoS mitigation)
 =====================================
 
+In this experiment, we combine 7 HIKe programs inside an eCLAT script to implement a DDOS mitigation scenario.
+
+In particular, we first use a token bucket meter to measure the packet rate per each IPv6 destination and detect "out of profile" flows. If the aggregate rate for a given IPv6 destination is "out of profile", we activate (only for the "out of profile" packet) another token bucket meter operating per (source, destination) couple. If the packet rate for a (source, destination) couple is "out of profile", we "blacklist" all packet with the specific (source, destination) for a time interval T=10 s. During the interval in which a flow is blacklisted, we sample one packet every 500 and we redirect it over a layer 2 interface, on which we can capture and store or analyze the packets.
 
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
