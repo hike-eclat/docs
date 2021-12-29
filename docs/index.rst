@@ -16,14 +16,17 @@ Welcome to HIKe - eCLAT documentation
    quickstart
    installation
    experiment_ddos_double_token_bucket
-   developing_hike
-   developing_eclat
-   usage
+   hike_programs
    tutorials
    examples
-   contributing
    history
- 
+
+.. developing_hike
+.. developing_eclat
+
+.. contributing
+.. usage
+
 .. tip::
 
    DEBUG: documentation version 5
