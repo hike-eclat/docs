@@ -2,8 +2,13 @@ A sample experiment (DDoS mitigation)
 =====================================
 
 
-#. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
+.. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
+Inside the container run:
+
+.. code-block:: shell
+
+   cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh
 
 A tmux will start, implementing the topology depicted below.
 There are three namespaces:
