@@ -19,6 +19,7 @@ Welcome to HIKe - eCLAT documentation
    hike_programs
    tutorials
    examples
+   detailed_doc
    history
 
 .. developing_hike
