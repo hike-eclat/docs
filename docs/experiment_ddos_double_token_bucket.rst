@@ -9,7 +9,7 @@ The source code of the eCLATscripts is reported `below <eCLAT script>`_.
 
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
-To execture the experiment, run the following command in the HIKe / eCLAT container:
+To execute the experiment, run the following command in the HIKe / eCLAT container:
 
 .. code-block:: shell
 
@@ -60,9 +60,9 @@ eCLAT script
 ^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-   # ddos_tb_2_levels
+   # ddos_tb_2_levels with packet samples redirected to collector
    # 
-   # (ddos_tb_2_levels_sample_cst.eclat)
+   # (ddos_tb_2_levels_sample_constants.eclat)
    #
    # first token bucket monitor per ip6 dst 
    # the out-profile packets are processed by a second token bucket per src,dst
@@ -115,4 +115,5 @@ eCLAT script
        monitor(PASS)
        hike_pass()
        return 0
+
 
