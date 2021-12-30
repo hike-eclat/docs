@@ -17,7 +17,7 @@ Increment the counter associated with the ``event`` number received in input. Th
 
 ip6_dst_tbmon()
 ------------------
-Perform tocken bucket monitoring per IPv6 destination. Update the tocken bucket state and return 0 if the packet is "in profile". The parameters of the token bucket are configured when the HIKe eBPF program is compiled.
+Perform token bucket monitoring per IPv6 destination. Update the tocken bucket state and return 0 if the packet is "in profile". The parameters of the token bucket are configured when the HIKe eBPF program is compiled.
 
 ip6_sd_tbmon()
 ------------------
