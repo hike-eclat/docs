@@ -1,6 +1,8 @@
 HIKe programs documentation
 ===========================
 
+Here you can find the documentation of HIKe programs from the point of view of the eCLAT developer.
+
 hike_pass()
 ---------
 Take the decision to pass the packet to the Linux kernel for further processing. The packet is not processed by the other programs in the eCLAT chain.
