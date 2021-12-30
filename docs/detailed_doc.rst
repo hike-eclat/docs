@@ -19,9 +19,12 @@ Read from map
 
 .. code-block:: python
 
-  include cal
+  include os
   include json
-  include ok
+  
+  # Command Abstraction Layer
+  include cal 
+  
   BASE_PATH =  '/sys/fs/bpf/maps'
   PACKAGE = 'package_name'
   PROGRAM = 'program_name'
