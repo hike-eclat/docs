@@ -22,14 +22,19 @@ Read from map
   include cal
   include json
   include ok
-  self.map_as_array = []
+  BASE_PATH =  '/sys/fs/bpf/maps'
+  PACKAGE = 'package_name'
+  PROGRAM = 'program_name'
+  MAP = 'map_name'
+  map_path = f"{BASE_PATH}/{PACKAGE}/{PROGRAM}/{MAP}"
+  map_as_array = []
         
-  if os.path.exists(self.map_path):
+  if os.path.exists(map_path):
     try :
-        self.map_as_array = json.loads(cal.bpftool_map_dump(self.map_path))
+        map_as_array = json.loads(cal.bpftool_map_dump(map_path))
     except Exception as e:
         print (e)
-        print (self.map_path)
+        print (map_path)
         return -1
   else:
     return -1
