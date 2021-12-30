@@ -49,6 +49,8 @@ Update a map with a (key, value) pair
 
 .. code-block:: python
 
+  include os
+  
   # Command Abstraction Layer
   include cal 
   
