@@ -72,6 +72,14 @@ Update a map with a (key, value) pair
   else:
     return -1
 
+Parsing packets in HIKe eBPF programs
+--------------------------------------------
 
+.. code-block:: none
 
+  cur->mhoff   : mac header offset
+  cur->nhoff   : nework header offset
+  cur->thoff   : transport header offset
+  cur->dataoff : the offset to the position that you still have to parse
+                 (usually the packet up to cur->dataoff has already been parsed)
 
