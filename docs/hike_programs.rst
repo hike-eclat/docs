@@ -21,7 +21,30 @@ Perform token bucket monitoring per IPv6 destination. Update the tocken bucket s
 
 ip6_sd_tbmon()
 ------------------
-Perform tocken bucket monitoring per IPv6 (source, destination) couple. Update the tocken bucket state and return 0 if the packet is "in profile". The parameters of the token bucket are configured when the HIKe eBPF program is compiled.
+Perform tocken bucket monitoring per IPv6 (source, destination) couple. Update the tocken bucket state and return 0 if the packet is "in profile". The parameters of the token bucket are configured when the HIKe eBPF program is compiled. 
+
+Key and value of the map ``pcpu_sd_tbmon`` are:
+
+.. code-block:: c
+
+  //see ip6_hset.h
+  struct key {
+    struct in6_addr saddr; // 16 bytes in network-order (big-endian)
+    struct in6_addr daddr; // 16 bytes in network-order (big-endian)
+  };
+  /*
+    see tb_defs.h
+    rate is expressed in (tokens/(2^shift_tokens)) / (2^base_time_bits ns)
+    bucket_size is expressed in tokens/(2^shift_tokens) 
+    last_tokens is expressed in tokens/(2^shift_tokens)
+    last_time is expressed in ns
+  */
+  struct value {
+    U64 rate; U64 bucket_size;
+    U64 last_tokens; U64 last_time;
+    U64 base_time_bits; U64 shift_tokens;     
+  } ;
+
 
 ip6_hset_srcdst(u64 ``action``)
 ------------------
