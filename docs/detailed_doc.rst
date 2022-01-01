@@ -45,7 +45,7 @@ Read the full map into a python list
   # map_as_array contains the map as a list of (key, value) pairs
   print (map_as_array)
 
-Update a map with a (key, value) pair
+Update a map with a (key, value) pair using ``cal_map_update`` and in raw hex mode
 
 .. code-block:: python
 
@@ -62,12 +62,16 @@ Update a map with a (key, value) pair
 
   if os.path.exists(map_path):
     try :
-        hex_key = ["01","00","00", "00"]
-        hex_value = ["01", "00", "00", "00","00", "00","00", "00"]
+        # update using cal_map_update
+        key = u32(256)
+        value = 512
+        cal.bpftool_map_update(map_path, key, value)
+        # raw hex mode update
+        hex_key = ["00","01","00", "00"]
+        hex_value = ["00", "02", "00", "00","00", "00","00", "00"]
         cal.bpftool_map_update(map_path, hex_key, hex_value, map_reference_type="pinned", value_type="hex")
     except Exception as e:
-        print (e)
-        print (map_path)
+        print (e, map_path)
         return -1
   else:
     return -1
