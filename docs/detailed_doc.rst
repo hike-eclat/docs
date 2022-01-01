@@ -50,6 +50,7 @@ Update a map with a (key, value) pair using ``cal_map_update`` and in raw hex mo
 .. code-block:: python
 
   include os
+  from hex_types import u32 
   
   # Command Abstraction Layer
   include cal 
@@ -65,7 +66,7 @@ Update a map with a (key, value) pair using ``cal_map_update`` and in raw hex mo
         # update using cal_map_update
         key = u32(256)
         value = 512
-        cal.bpftool_map_update(map_path, key, value)
+        cal.bpftool_map_update(map_path, key, value) # int are converted with 8 bytes 
         # raw hex mode update
         hex_key = ["00","01","00", "00"]
         hex_value = ["00", "02", "00", "00","00", "00","00", "00"]
