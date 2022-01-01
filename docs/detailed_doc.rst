@@ -64,9 +64,10 @@ Update a map with a (key, value) pair using ``cal_map_update`` and in raw hex mo
   if os.path.exists(map_path):
     try :
         # update using cal_map_update
-        key = u32(256)
-        value = 512
-        cal.bpftool_map_update(map_path, key, value) # int are converted with 8 bytes 
+        key = u32(256) # objects are converted using their to_hex() method
+        value = 512 # int are converted with 8 bytes
+        cal.cal_map_update(map_path, key, value)  
+        
         # raw hex mode update
         hex_key = ["00","01","00", "00"]
         hex_value = ["00", "02", "00", "00","00", "00","00", "00"]
