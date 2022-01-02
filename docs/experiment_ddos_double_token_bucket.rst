@@ -42,13 +42,15 @@ The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is att
                                     |    COLLECTOR   |
                                     +----------------+
 
-There are 7 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
+There are 8 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
 
-In window TG1 and TG2 you can run the ping commands to generate traffic.
+In windows TG1 and TG2 you can run the ping commands to generate traffic.
 On TG1 the command ``ping -i 0.01 fc01::2`` which sends 100 p/s is displayed and ready to be executed.
 On TG2 the command ``ping -i 0.5 fc01::3`` which sends 2 p/s is displayed and ready to be executed.
 
 In window MAPS you can see the content of the eBPF maps.
+
+In window DEBUG you can the low-level debug printout of the HIKe programs.
 
 In window CLT we have run the ``tcpdump -i veth0`` command to display the packets that are redirected to the collector.
 
