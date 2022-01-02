@@ -12,6 +12,17 @@ in the folder ``eclat_daemon/components/programs/package_name``
 The include files with extension ``.h`` are read from the same folder if present, if they are 
 not available in the same folder, they are read from ``eclat_daemon/hike_v3/src``
 
+
+eCLAT transpiler labels (resolved at load time) 
+--------------------------------------------
+
+It is possible to define labels in eCLAT scripts that are replaced at load time when the eCLAT script
+is transpiled. The value of a label is set with the ``--define`` option of the ``eclat.py``.
+For example if the label ``DEVNAME`` is present in the eCLAT script ``script.eclat``, 
+the value ``eth0`` can assigne to this label as follows:
+
+``python eclat.py --load script.eclat --define DEVNAME eth0``
+
 Read and write from/to BPF maps
 -------------------------------
 
