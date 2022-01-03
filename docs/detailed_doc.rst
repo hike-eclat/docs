@@ -100,3 +100,7 @@ Parsing packets in HIKe eBPF programs
   cur->dataoff : the offset to the position that you still have to parse
                  (usually the packet up to cur->dataoff has already been parsed)
 
+note that cur->thoff is not really the transport layer, but it can changed when parsing the packet
+
+it usually starts as the first header after the basic network header,
+a program that parses the headers after the basic header may decide to advance cur->thoff
