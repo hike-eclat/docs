@@ -3,11 +3,13 @@ HIKe programs documentation
 
 Here you can find the documentation of HIKe programs from the point of view of the eCLAT developer.
 
-The HIKe programs are organized in packages. The list of already available packages is:
-- hike_default
-- meter
-- sampler
-- info
+The HIKe programs are organized in packages. Already available packages are listed hereafter, developers can
+add more packages.
+
+- `hike_default <hike_default package>`_
+- `meter <meter package>`_
+- `sampler <sampler package>`_
+- `info <info package>`_
 
 hike_default package
 ---------
