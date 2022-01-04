@@ -5,7 +5,7 @@ In this experiment, we combine 7 HIKe programs inside an eCLAT script to impleme
 
 In particular, we first use a token bucket meter to measure the packet rate per each IPv6 destination and detect "out of profile" flows. If the aggregate rate for a given IPv6 destination is "out of profile", we activate (only for the "out of profile" packet) another token bucket meter operating per (source, destination) couple. If the packet rate for a (source, destination) couple is "out of profile", we "blacklist" all packet with the specific (source, destination) for a time interval T=10 s. During the interval in which a flow is blacklisted, we sample one packet every 500 and redirect it over a layer 2 interface, on which we can capture and store or analyze the packets.
 
-The source code of the eCLATscripts is reported `below <eCLAT script>`_.
+The source code of the eCLAT script is reported `below <eCLAT script>`_.
 
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
@@ -74,7 +74,10 @@ eCLAT script
    # a packet every 500 blacklisted packets is redirected to an interface
    # the script is also counting the accepted, dropped and redirected packets
 
-   from programs.mynet import hike_drop, hike_pass,  ip6_hset_srcdst, ip6_sd_tbmon, monitor, ip6_dst_tbmon, ip6_sd_dec2zero, l2_redirect
+   from programs.hike_default import hike_drop, hike_pass, ip6_hset_srcdst, monitor, l2_redirect
+   from programs.meter import ip6_sd_tbmon, ip6_dst_tbmon
+   from programs.sampler import ip6_sd_dec2zero
+
    from loaders.basic import ip6_sc
 
    # send all IPv6 packets to our chain
