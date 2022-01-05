@@ -6,11 +6,11 @@ Here you can find the documentation of HIKe programs from the point of view of t
 The HIKe programs are organized in packages. Already available packages are listed hereafter, developers can
 add more packages.
 
-- `hike_default <#hike-default-package>`_ default package with basic programs
-- `meter <#meter-package>`_ counters and token buckets for packet flows
-- `sampler <#sampler-package>`_ select a packet every N packet for a flow
-- `info <#info-package>`_ retrieve information from packet
-- `alt_mark <#alt-mark-package>`_ alternate marking in HIKe
+- `hike_default <#hike-default-package>`_ : default package with basic programs
+- `meter <#meter-package>`_ : counters and token buckets for packet flows
+- `sampler <#sampler-package>`_ : select a packet every N packet for a flow
+- `info <#info-package>`_ : retrieve information from packet
+- `alt_mark <#alt-mark-package>`_ : alternate marking in HIKe
 
 hike_default package
 ---------
