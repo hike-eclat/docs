@@ -6,14 +6,16 @@ Here you can find the documentation of HIKe programs from the point of view of t
 The HIKe programs are organized in packages. Already available packages are listed hereafter, developers can
 add more packages.
 
-- `hike_default <#hike-default-package>`_
-- `meter <#meter-package>`_
-- `sampler <#sampler-package>`_
-- `info <#info-package>`_
-- `alt_mark <#alt-mark-package>`_
+- `hike_default <#hike-default-package>`_ default package with basic programs
+- `meter <#meter-package>`_ counters and token buckets for packet flows
+- `sampler <#sampler-package>`_ select a packet every N packet for a flow
+- `info <#info-package>`_ retrieve information from packet
+- `alt_mark <#alt-mark-package>`_ alternate marking in HIKe
 
 hike_default package
 ---------
+
+Default package with basic programs
 
 hike_pass()
 ^^^^^^^^^^^
@@ -44,6 +46,8 @@ hashset if it is not already present and clean up an expired entry.
 
 meter package
 ---------
+
+Counters and token buckets for packet flows
 
 ip6_dst_tbmon()
 ^^^^^^^^^^^
@@ -79,6 +83,8 @@ Key and value of the map ``pcpu_sd_tbmon`` are:
 sampler package
 ---------
 
+Select a packet every N packet for a flow
+
 ip6_sd_dec2zero(u64 ``count``)
 ^^^^^^^^^^^
 
@@ -86,6 +92,8 @@ Implement a counter-to-zero per IPv6 (source, destination) couple. Initialize th
 
 info package
 ---------
+
+Retrieve information from packet
 
 show_pkt_info(u64 ``select_layers``, u64 ``user_info``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,6 +109,8 @@ LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
 
 alt_mark package
 ---------
+
+Alternate marking in HIKe
 
 
 ip6_alt_mark()
