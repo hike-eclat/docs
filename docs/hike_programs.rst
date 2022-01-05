@@ -6,11 +6,11 @@ Here you can find the documentation of HIKe programs from the point of view of t
 The HIKe programs are organized in packages. Already available packages are listed hereafter, developers can
 add more packages.
 
-- `hike_default <hike-default-package>`_
-- `meter <meter-package>`_
-- `sampler <sampler-package>`_
-- `info <info-package>`_
-- `alt_mark <alt-mark-package>`_
+- `hike_default <#hike-default-package>`_
+- `meter <#meter-package>`_
+- `sampler <#sampler-package>`_
+- `info <#info-package>`_
+- `alt_mark <#alt-mark-package>`_
 
 hike_default package
 ---------
