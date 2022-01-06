@@ -1,5 +1,5 @@
-Example experiment (DDoS mitigation)
-=====================================
+DDoS mitigation experiment
+-------------------------
 
 In this experiment, we combine 7 HIKe programs inside an eCLAT script to implement a DDOS mitigation scenario.
 
@@ -65,8 +65,8 @@ To perform an experirent first run the 2 p/s ping ``ping -i 0.5 fc01::3`` on TG2
 
 Then add the 100 p/s ping ``ping -i 0.01 fc01::2`` on TG1. You will notice that after few seconds the ping are not replied, because the (src, dst) flow has been blacklisted (for 10 seconds). After 10 seconds the flow is removed from the blacklist and some ping replies are again received. Looking in the MAPS windows, you can see that token bucket per (src, dst) has been activated and that the packet monitor (map ``map_pcpu_mon``) shows many dropped packets (code 1). One packet every 500 packets is shown as redirected (code 2). You can check on the CLT window that the redirected packet has been captured by tcpdump.
 
-eCLAT script
-^^^^^^^^^^^^^^^^^^^^
+eCLAT script for ddos mitigation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
    # ddos_tb_2_levels with packet samples redirected to collector
