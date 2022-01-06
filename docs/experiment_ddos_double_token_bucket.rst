@@ -16,7 +16,14 @@ To execute the experiment, run the following command in the HIKe / eCLAT contain
    cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh
 
 A tmux will start, implementing the topology depicted below.
-There are three namespaces:
+
+To exit from the tmux session type ``Ctrl-b`` ``d``.
+
+To resume the session ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
+
+To kill the tmux session ``cd /opt/eclat-daemon && scripts/kill-tmux.sh`` (note that the previous session is automatically killed if the experiment is executed again).
+
+There are three namespaces in this experiment:
 
 * SUT (System Under Test)
 * TG (Traffic Generator)
