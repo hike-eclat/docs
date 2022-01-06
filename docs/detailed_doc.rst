@@ -104,3 +104,23 @@ note that cur->thoff is not really the transport layer, but it can changed when 
 
 it usually starts as the first header after the basic network header,
 a program that parses the headers after the basic header may decide to advance cur->thoff
+
+
+eCLAT data types and operators 
+------------------------------
+
+=============== ==================
+eCLAT data type eBPF (C) data type
+=============== ==================
+   u64            __u64 
+   u32            __u32 
+   u16            __u16
+   u8             __u8
+   s64            __s64 
+   s32            __s32 
+   s16            __s16
+   s8             __s8
+=============== ==================
+
+
+
