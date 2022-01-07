@@ -11,6 +11,8 @@ add more packages.
 - `sampler <#sampler-package>`_ : select a packet every N packet for a flow
 - `info <#info-package>`_ : retrieve information from packet
 - `alt_mark <#alt-mark-package>`_ : alternate marking in HIKe
+- `tutorial <#alt-mark-package>`_ : Deep Packet Inspection with a tutorial purpose
+
 
 hike_default package
 ---------
@@ -47,7 +49,7 @@ hashset if it is not already present and clean up an expired entry.
 meter package
 ---------
 
-Counters and token buckets for packet flows
+Counters and token buckets for packet flows (see `Github repo <https://github.com/netgroup/hikepkg-meter>`_)
 
 ip6_dst_tbmon()
 ^^^^^^^^^^^
@@ -83,7 +85,7 @@ Key and value of the map ``pcpu_sd_tbmon`` are:
 sampler package
 ---------
 
-Select a packet every N packet for a flow
+Select a packet every N packet for a flow (see `Github repo <https://github.com/netgroup/hikepkg-sampler>`_)
 
 ip6_sd_dec2zero(u64 ``count``)
 ^^^^^^^^^^^
@@ -93,7 +95,7 @@ Implement a counter-to-zero per IPv6 (source, destination) couple. Initialize th
 info package
 ---------
 
-Retrieve information from packet
+Retrieve information from packet (see `Github repo <https://github.com/netgroup/hikepkg-info>`_)
 
 show_pkt_info(u64 ``select_layers``, u64 ``user_info``)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,14 +112,16 @@ LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
 alt_mark package
 ---------
 
-Alternate marking in HIKe
+Alternate marking in HIKe (see `Github repo <https://github.com/netgroup/hikepkg-alt_mark>`_)
 
 
 ip6_alt_mark()
 ^^^^^^^^^^^
 Decode the Alternate Mark TLV in the Hop-by-hop Options Extension Header (done) and in the Destination Options Extension Header (work in progress).
 
+tutorial package
+---------
 
+Deep Packet Inspection with a tutorial purpose (see `Github repo <https://github.com/netgroup/hikepkg-tutorial>`_)
 
-
-
+(work in progress)
