@@ -81,6 +81,13 @@ Key and value of the map ``pcpu_sd_tbmon`` are:
     U64 base_time_bits; U64 shift_tokens;     
   } ;
 
+ip6_dst_meter()
+^^^^^^^^^^^
+Counts the packets per IPv6 destination.
+
+ip6_sd_meter()
+^^^^^^^^^^^
+Counts the packets per IPv6(source, destination) couple.
 
 sampler package
 ---------
@@ -106,7 +113,6 @@ Print debug information about a packet.
 LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
 
 ``user_info`` is a u64 that is provided by the calling chain and printed by ``show_pkt_info``
-
 
 
 alt_mark package
