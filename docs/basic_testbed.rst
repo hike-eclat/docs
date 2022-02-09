@@ -13,7 +13,7 @@ To execute the experiment, run the following command in the HIKe / eCLAT contain
 
 .. code-block:: shell
 
-   cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh
+   cd /opt/eclat-daemon && testbed/basic_testbed.sh
 
 A tmux will start, implementing the topology depicted in the DDoS mitigation example. Refer to that example
 for the instructions on how to manage the tmux session.
