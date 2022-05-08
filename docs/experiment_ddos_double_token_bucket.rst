@@ -7,8 +7,6 @@ In particular, we first use a token bucket meter to measure the packet rate per 
 
 The source code of the eCLAT script is reported :ref:`below<eclat-script-ddos>`.
 
-:ref:`eclat-script-ddos`
-
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh``
 
 To execute the experiment, run the following command in the HIKe / eCLAT container:
