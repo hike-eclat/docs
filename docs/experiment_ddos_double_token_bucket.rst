@@ -5,7 +5,7 @@ In this experiment, we combine 7 HIKe programs inside an eCLAT script to impleme
 
 In particular, we first use a token bucket meter to measure the packet rate per each IPv6 destination and detect "out of profile" flows. If the aggregate rate for a given IPv6 destination is "out of profile", we activate (only for the "out of profile" packet) another token bucket meter operating per (source, destination) couple. If the packet rate for a (source, destination) couple is "out of profile", we "blacklist" all packet with the specific (source, destination) for a time interval T=10 s. During the interval in which a flow is blacklisted, we sample one packet every 500 and redirect it over a layer 2 interface, on which we can capture and store or analyze the packets.
 
-The source code of the eCLAT script is reported `below <eCLAT script>`_.
+The source code of the eCLAT script is reported `below <eCLAT script>`_.  :ref:`eclat-script-ddos`
 
 https://hike-eclat.readthedocs.io/en/latest/experiments.html#eclat-script-for-ddos-mitigation
 
@@ -67,8 +67,11 @@ To perform an experirent first run the 2 p/s ping ``ping -i 0.5 fc01::3`` on TG2
 
 Then add the 100 p/s ping ``ping -i 0.01 fc01::2`` on TG1. You will notice that after few seconds the ping are not replied, because the (src, dst) flow has been blacklisted (for 10 seconds). After 10 seconds the flow is removed from the blacklist and some ping replies are again received. Looking in the MAPS windows, you can see that token bucket per (src, dst) has been activated and that the packet monitor (map ``map_pcpu_mon``) shows many dropped packets (code 1). One packet every 500 packets is shown as redirected (code 2). You can check on the CLT window that the redirected packet has been captured by tcpdump.
 
+
+.. _eclat-script-ddos:
+
 eCLAT script for ddos mitigation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
    # ddos_tb_2_levels with packet samples redirected to collector
