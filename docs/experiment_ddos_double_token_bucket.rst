@@ -49,19 +49,21 @@ The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is att
                                     |    COLLECTOR   |
                                     +----------------+
 
-There are 8 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
+There are 9 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
 
-In windows TG1 and TG2 you can run the ping commands to generate traffic.
+In the TG1 and TG2 windows you can run the ping commands to generate traffic from the TG namespace.
 On TG1 the command ``ping -i 0.01 fc01::2`` which sends 100 p/s is displayed and ready to be executed.
 On TG2 the command ``ping -i 0.5 fc01::3`` which sends 2 p/s is displayed and ready to be executed.
 
-In window MAPS you can see the content of the eBPF maps.
+The MAIN, MAPS and DEBUG windows are in the default namespace of the container.
+In the MAPS window you can see the content of the eBPF maps.
+In the DEBUG window you can the low-level debug printout of the HIKe programs.
 
-In window DEBUG you can the low-level debug printout of the HIKe programs.
+The SUT, SUT2 and SUTDA windows are in the SUT namespace. The eCLAT daemon is executed in the SUTDA windows.
 
-In window CLT we have run the ``tcpdump -i veth0`` command to display the packets that are redirected to the collector.
+The CLT windows runs in the COLLECTOR namespace. In the CLT window we have run the ``tcpdump -i veth0`` command to display the packets that are redirected to the collector.
 
-To perform an experirent first run the 2 p/s ping ``ping -i 0.5 fc01::3`` on TG2. Go in MAPS window and can see that the flow with destination fc01::3 is monitored in the per destination token bucket and it remains IN_PROFILE. The packet monitor (map ``map_pcpu_mon``) counts the transmitted packets (code 0). 
+To perform an experirent first run the 2 p/s ping ``ping -i 0.5 fc01::3`` on TG2. Go in the MAPS window and can see that the flow with destination fc01::3 is monitored in the per destination token bucket and it remains IN_PROFILE. The packet monitor (map ``map_pcpu_mon``) counts the transmitted packets (code 0). 
 
 Then add the 100 p/s ping ``ping -i 0.01 fc01::2`` on TG1. You will notice that after few seconds the ping are not replied, because the (src, dst) flow has been blacklisted (for 10 seconds). After 10 seconds the flow is removed from the blacklist and some ping replies are again received. Looking in the MAPS windows, you can see that token bucket per (src, dst) has been activated and that the packet monitor (map ``map_pcpu_mon``) shows many dropped packets (code 1). One packet every 500 packets is shown as redirected (code 2). You can check on the CLT window that the redirected packet has been captured by tcpdump.
 
