@@ -3,7 +3,7 @@ Basic testbed
 
 In this simple experiment, we run the eCLAT script called basic_example.eclat.
 
-The source code of the eCLAT script is reported `below <eCLAT script>`_.
+The source code of the eCLAT script is reported :ref:`below<eclat-script-basic>`.
 
 The eCLAT script only displays some information in the log.
 
@@ -25,6 +25,8 @@ The TG is the namespace in which we generate traffic to be processed by our HIKe
 The COLLECTOR namespace is used in some examples in which we redirect some incoming packets to the outgoing interface cl0 of the SUT.
 
 In windows TG1 and TG2 you can run the ping commands to generate traffic.
+
+.. _eclat-script-basic:
 
 eCLAT script basic_example.eclat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
