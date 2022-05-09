@@ -32,26 +32,26 @@ eCLAT script basic_example.eclat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    # basic example
-    # 
-    # (basic_example.eclat)
-    #
+   # basic example
+   # 
+   # (basic_example.eclat)
+   #
 
-    #from programs.mynet import hike_drop, hike_pass, monitor, show_pkt_info
-    from programs.hike_default import hike_drop, hike_pass, monitor
-    from programs.info import show_pkt_info
-    from loaders.basic import ip6_sc
+   #from programs.mynet import hike_drop, hike_pass, monitor, show_pkt_info
+   from programs.hike_default import hike_drop, hike_pass, monitor
+   from programs.info import show_pkt_info
+   from loaders.hike_default import ip6_simple_classifier
 
-    # send all IPv6 packets to our chain
-    ip6_sc[ipv6_sc_map] = { (0): (basic_example) }
-    ip6_sc.attach('DEVNAME', 'xdp')
+   # send all IPv6 packets to our chain
+   ip6_simple_classifier[ipv6_simple_classifier_map] = { (0): (basic_example) }
+   ip6_simple_classifier.attach('DEVNAME', 'xdp')
 
-    def basic_example():
+   def basic_example():
 
-        LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
+       LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
 
-        u64 : myvar = 1000
-        show_pkt_info(TRANSP_LAYER, myvar)
+       u64 : myvar = 1000
+       show_pkt_info(TRANSP_LAYER, myvar)
 
-        hike_pass()
-        return 0
+       hike_pass()
+       return 0
