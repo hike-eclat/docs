@@ -86,15 +86,18 @@ eCLAT script for ddos mitigation
    # a packet every 500 blacklisted packets is redirected to an interface
    # the script is also counting the accepted, dropped and redirected packets
 
+   #from programs.mynet import hike_pass,  ip6_hset_srcdst, ip6_sd_tbmon, monitor, ip6_dst_tbmon, l2_redirect, ip6_sd_dec2zero
+
    from programs.hike_default import hike_drop, hike_pass, ip6_hset_srcdst, monitor, l2_redirect
    from programs.meter import ip6_sd_tbmon, ip6_dst_tbmon
    from programs.sampler import ip6_sd_dec2zero
 
-   from loaders.basic import ip6_sc
+
+   from loaders.hike_default import ip6_simple_classifier
 
    # send all IPv6 packets to our chain
-   ip6_sc[ipv6_sc_map] = { (0): (ddos_tb_2_lev) }
-   ip6_sc.attach('DEVNAME', 'xdp')
+   ip6_simple_classifier[ipv6_simple_classifier_map] = { (0): (ddos_tb_2_lev) }
+   ip6_simple_classifier.attach('DEVNAME', 'xdp')
 
    def ddos_tb_2_lev():
        PASS=0; DROP=1; REDIRECT=2
@@ -132,5 +135,3 @@ eCLAT script for ddos mitigation
        monitor(PASS)
        hike_pass()
        return 0
-
-
