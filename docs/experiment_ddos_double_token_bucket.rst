@@ -33,7 +33,7 @@ On TG2 the command ``ping -i 0.5 fc01::3`` which sends 2 p/s is displayed and re
 
 The MAIN, MAPS and DEBUG windows are in the default namespace of the container.
 In the MAPS window you can see the content of the eBPF maps.
-In the DEBUG window you can the low-level debug printout of the HIKe programs.
+In the DEBUG window you can see the low-level debug printout of the HIKe programs.
 
 The SUT, SUT2 and SUTDA windows are in the SUT namespace. The eCLAT daemon is executed in the SUTDA windows.
 
