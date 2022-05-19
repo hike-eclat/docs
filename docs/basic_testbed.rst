@@ -53,17 +53,27 @@ Windows in the tmux session
 
 There are 9 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
 
-In the TG1 and TG2 windows you can run the ping commands to generate traffic from the TG namespace.
-On TG1 the command ``ping -i 0.01 fc01::2`` which sends 100 p/s is displayed and ready to be executed.
-On TG2 the command ``ping -i 0.5 fc01::3`` which sends 2 p/s is displayed and ready to be executed.
+In the TG1 and TG2 windows you can type and run the commands to generate traffic from the TG namespace:
+* Command prepared in TG1: ``tcpreplay -i enp6s0f0 hike_v3/testbed/pkts/pkt_ipv6_udp.pcap``
+* Command prepared in TG2: ``ping -i 5 fc01::3``
 
 The MAIN, MAPS and DEBUG windows are in the default namespace of the container.
 In the MAPS window you can see the content of the eBPF maps.
-In the DEBUG window you can the low-level debug printout of the HIKe programs.
+In the DEBUG window you can see the low-level debug printout of the HIKe programs.
 
 The SUT, SUT2 and SUTDA windows are in the SUT namespace. The eCLAT daemon is executed in the SUTDA windows.
 
-The CLT windows runs in the COLLECTOR namespace. In the CLT window we could run the ``tcpdump -i veth0`` command to display the packets that are redirected to the collector.
+You can execute the tcpreply command from TG1 to send an udp packet and read the UDP source and destination ports written by the show_pkt_info HIKe/eBPF program in the log (shown in the DEBUG window).
+
+You can execute the ping command from TG2 and it will send an ICMP packet every 5 seconds. In this case, the transport protocol 58 will be displayed in the log.
+
+Now you can try to modify the eCLAT script basic_example.eclat: ``cd /opt/eclat-daemon && nano test/eclat_scripts/basic_example.eclat``.
+
+For example, change line 20 from ``show_pkt_info(TRANSP_LAYER, myvar)`` to ``show_pkt_info(NET_LAYER | TRANSP_LAYER, 2000)``.
+
+Now both Network Layer and Transport Layer information are displayed in the log, and the displayed "User info" passed as parameter to the show_pkt_info HIKe/eBPF program is changed from 1000 to 2000.
+
+
 
 .. _eclat-script-basic:
 
