@@ -1,11 +1,9 @@
 Basic testbed 
 -------------------------
 
-In this simple experiment, we run the eCLAT script called basic_example.eclat.
+In this simple experiment, we run the eCLAT script called basic_example.eclat. This script executes a HIKe program that can extract some information from the packet and display it in a log. For example, it can display transport ports for UDP or TCP packets.
 
 The source code of the eCLAT script is reported :ref:`below<eclat-script-basic>`.
-
-The eCLAT script only displays some information in the log.
 
 .. Inside the container run: ``cd /opt/eclat-daemon && testbed/basic_testbed.sh``
 
@@ -15,21 +13,62 @@ To execute the experiment, run the following command in the HIKe / eCLAT contain
 
    cd /opt/eclat-daemon && testbed/basic_testbed.sh
 
-A tmux will start, implementing the topology depicted in the DDoS mitigation example. Refer to that example
-for the instructions on how to manage the tmux session.
+A tmux session will start. It deploys the topology depicted below, with the following three namespaces:
 
-Also the topology is the same, with the three namespaces SUT, TG, COLLECTOR.
-The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is attached to the XDP hook
-on the incoming interface enp6s0f0. 
-The TG is the namespace in which we generate traffic to be processed by our HIKe / eCLAT framework.
-The COLLECTOR namespace is used in some examples in which we redirect some incoming packets to the outgoing interface cl0 of the SUT.
+* SUT (System Under Test)
+* TG (Traffic Generator)
+* COLLECTOR
 
-In windows TG1 and TG2 you can run the ping commands to generate traffic.
+The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is attached to the XDP hook on the incoming interface enp6s0f0. The TG is the namespace in which we generate traffic to be processed by our HIKe / eCLAT framework. The COLLECTOR namespace can be used in some examples in which we redirect some incoming packets from the SUT to the COLLECTOR, but it is not used in this basic example. 
+
+.. code-block:: none
+
+          +------------------+      +------------------+
+          |        TG        |      |       SUT        |
+          |                  |      |                  |
+          |         enp6s0f0 +------+ enp6s0f0 <--- HIKe VM XDP loader
+          |                  |      |                  |
+          |                  |      |                  |
+          |         enp6s0f1 +------+ enp6s0f1         |
+          |                  |      |         + cl0  <-|- towards the collector
+          +------------------+      +---------|--------+
+                                              |
+                                    +---------|------+
+                                    |         + veth0|
+                                    |                |
+                                    |    COLLECTOR   |
+                                    +----------------+
+
+Commands to control the tmux session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* To exit from the tmux session type ``Ctrl-b`` ``d``.
+
+* To resume the session ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
+
+* To kill the tmux session ``cd /opt/eclat-daemon && scripts/kill-tmux.sh`` (note that the previous session is automatically killed if the experiment is executed again).
+
+Windows in the tmux session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are 9 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
+
+In the TG1 and TG2 windows you can run the ping commands to generate traffic from the TG namespace.
+On TG1 the command ``ping -i 0.01 fc01::2`` which sends 100 p/s is displayed and ready to be executed.
+On TG2 the command ``ping -i 0.5 fc01::3`` which sends 2 p/s is displayed and ready to be executed.
+
+The MAIN, MAPS and DEBUG windows are in the default namespace of the container.
+In the MAPS window you can see the content of the eBPF maps.
+In the DEBUG window you can the low-level debug printout of the HIKe programs.
+
+The SUT, SUT2 and SUTDA windows are in the SUT namespace. The eCLAT daemon is executed in the SUTDA windows.
+
+The CLT windows runs in the COLLECTOR namespace. In the CLT window we could run the ``tcpdump -i veth0`` command to display the packets that are redirected to the collector.
 
 .. _eclat-script-basic:
 
 eCLAT script basic_example.eclat
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
    # basic example
