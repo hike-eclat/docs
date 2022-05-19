@@ -1,5 +1,5 @@
 DDoS mitigation experiment
--------------------------
+------------------------------
 
 In this experiment, we combine 7 HIKe programs inside an eCLAT script to implement a DDOS mitigation scenario.
 
@@ -15,39 +15,15 @@ To execute the experiment, run the following command in the HIKe / eCLAT contain
 
    cd /opt/eclat-daemon && testbed/ddos_double_token_bucket_with_sampler.sh
 
-A tmux will start, implementing the topology depicted below.
-
-To exit from the tmux session type ``Ctrl-b`` ``d``.
-
-To resume the session ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
-
-To kill the tmux session ``cd /opt/eclat-daemon && scripts/kill-tmux.sh`` (note that the previous session is automatically killed if the experiment is executed again).
-
-There are three namespaces in this experiment:
+A tmux session will start, implementing the topology depicted in the basic example above, with the three namespaces:
 
 * SUT (System Under Test)
 * TG (Traffic Generator)
 * COLLECTOR
 
-The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is attached to the XDP hook on the incoming interface enp6s0f0. The TG is the namespace in which we generate traffic to be processed by our HIKe / eCLAT framework. The COLLECTOR namespace is used in some examples in which we redirect some incoming packets to the outgoing interface cl0 of the SUT.
+Refer to that example above for the instructions on how to manage the tmux session.
 
-.. code-block:: none
-
-          +------------------+      +------------------+
-          |        TG        |      |       SUT        |
-          |                  |      |                  |
-          |         enp6s0f0 +------+ enp6s0f0 <--- HIKe VM XDP loader
-          |                  |      |                  |
-          |                  |      |                  |
-          |         enp6s0f1 +------+ enp6s0f1         |
-          |                  |      |         + cl0  <-|- towards the collector
-          +------------------+      +---------|--------+
-                                              |
-                                    +---------|------+
-                                    |         + veth0|
-                                    |                |
-                                    |    COLLECTOR   |
-                                    +----------------+
+The SUT is the namespace in which we run the eCLAT daemon and the HIKe VM is attached to the XDP hook on the incoming interface enp6s0f0. The TG is the namespace in which we generate traffic to be processed by our HIKe / eCLAT framework. The COLLECTOR namespace is used in this examples in which we redirect some incoming packets to the outgoing interface cl0 of the SUT.
 
 There are 9 windows in the TMUX, click with the mouse on the window name in the status bar to activate them.
 
