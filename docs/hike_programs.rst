@@ -11,7 +11,8 @@ add more packages.
 - `sampler <#sampler-package>`_ : select a packet every N packet for a flow
 - `info <#info-package>`_ : retrieve information from packet
 - `alt_mark <#alt-mark-package>`_ : alternate marking in HIKe
-- `tutorial <#alt-mark-package>`_ : Deep Packet Inspection with a tutorial purpose
+- `tutorial <#tutorial-package>`_ : Deep Packet Inspection with a tutorial purpose
+- `Extensible In-band Processing (EIP) <#eip-package>`_ : prototype implementation of EIP
 
 
 hike_default package
