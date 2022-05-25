@@ -12,7 +12,7 @@ add more packages.
 - `info <#info-package>`_ : retrieve information from packet
 - `alt_mark <#alt-mark-package>`_ : alternate marking in HIKe
 - `tutorial <#tutorial-package>`_ : Deep Packet Inspection with a tutorial purpose
-- `Extensible In-band Processing (EIP) <#eip-package>`_ : prototype implementation of EIP
+- `eip <#eip-package>`_ : prototype implementation of Extensible In-band Processing (EIP)
 
 
 hike_default package
@@ -134,7 +134,7 @@ Deep Packet Inspection with a tutorial purpose (see `Github repo <https://github
 (work in progress)
 
 
-EIP package
+eip package
 -----------------
 
 (to be added) 
