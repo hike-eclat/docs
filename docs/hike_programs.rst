@@ -100,7 +100,7 @@ ip6_sd_dec2zero(u64 ``count``)
 Implement a counter-to-zero per IPv6 (source, destination) couple. Initialize the counter-to-zero with the input value ``count``. When the counter reaches zero, return zero and reset the counter to the input value ``count``.
 
 info package
----------
+--------------
 
 Retrieve information from packet (see `Github repo <https://github.com/netgroup/hikepkg-info>`_)
 
@@ -116,18 +116,26 @@ LAYER_2=1; NET_LAYER=2; TRANSP_LAYER=4
 
 
 alt_mark package
----------
+-------------------
 
 Alternate marking in HIKe (see `Github repo <https://github.com/netgroup/hikepkg-alt_mark>`_)
 
 
 ip6_alt_mark()
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 Decode the Alternate Mark TLV in the Hop-by-hop Options Extension Header (done) and in the Destination Options Extension Header (work in progress).
 
 tutorial package
----------
+-----------------
 
 Deep Packet Inspection with a tutorial purpose (see `Github repo <https://github.com/netgroup/hikepkg-tutorial>`_)
 
 (work in progress)
+
+
+EIP package
+-----------------
+
+(to be added) 
+
+
