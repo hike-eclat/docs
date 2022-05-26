@@ -5,5 +5,5 @@ Example experiments
 
 .. include:: experiment_ddos_double_token_bucket.rst
 
-.. include:: eip_experiment.rst
+.. include:: experiment_eip.rst
 
