@@ -1,3 +1,9 @@
+HIKe eCLAT Documentation
+================================
+
+https://hike-eclat.readthedocs.io/en/latest/
+
+
 Template
 ========
 
