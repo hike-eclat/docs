@@ -136,7 +136,17 @@ Deep Packet Inspection with a tutorial purpose (see `Github repo <https://github
 
 eip package
 -----------------
+Programs for the processing of several EIP Information Elements.
 
-(to be added) 
+Links:
 
+- `Github repo <https://github.com/netgroup/hikepkg-eip>`_
+- `Experiments doc <https://hike-eclat.readthedocs.io/en/latest/experiments.html#experiment-on-eip-extensible-in-band-processing>`_
+- `Headers draft <https://eip-home.github.io/eip-headers/draft-eip-headers-definitions.html>`_
+
+mcd()
+^^^^^^^^^
+Process the Compressed Path Tracing (CPT) Information Element (IE) (see the headers draft).
+
+The eBPF program is executed in the intermediate nodes. When a probe packet is received, the Midpoint Compressed Data (MCD) is computed. It needs to read data from maps to work. The data comprises a timestamp, an interface load and an interface ID.
 
