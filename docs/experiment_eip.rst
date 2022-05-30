@@ -14,8 +14,6 @@ Experiment on EIP (Extensible In-band Processing)
 In this experiment, we set up a testbed with a different topology. We have four routers connected as shown in the figure above.
 The testbed will create a tmux session with multiple windows. One for each router, plus 1 more window for routers r2 and r3 where the eCLAT daemon will be running. Lastly, a MAIN window, a MAPS window and a DEBUG window.
 
-You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
-
 You can kill the entire session by running: ``cd /opt/eclat-daemon && scripts/kill-tmux.sh``. But you don't need to manually kill the session before starting a new one, as this operation will be performed automatically.
 
 
@@ -27,10 +25,13 @@ The eBPF code can be found at https://github.com/netgroup/hikepkg-eip
 Path Tracing example
 ^^^^^^^^^^^^^^^^^^^^^^^^
 You can run the testbed with the command:
+
 .. code-block:: shell
+
   cd /opt/eclat-daemon && testbed/basic_testbed.sh
 
 This will run the :ref:`PT eCLAT script<eclat-script-eip>` on routers r2 and r3.
+You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
 
 You can now send a packet from r1 using tcpreplay, the command will be ready at the R1 window.
 On the R4 window you can start tcpdump to analyze the received packet. Also in this case the command will be ready to be executed on the R4 window.
