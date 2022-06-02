@@ -30,7 +30,7 @@ You can run the testbed with the command:
 
   cd /opt/eclat-daemon && testbed/basic_testbed.sh
 
-This will run the :ref:`PT eCLAT script<eclat-script-eip>` on routers r2 and r3.
+This will deploy the :ref:`eCLAT script for Path Tracing<eclat-script-eip>` on routers r2 and r3.
 You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
 
 You can now send a packet from r1 using tcpreplay, the command will be ready at the R1 window.
@@ -39,8 +39,8 @@ Use the DEBUG window to see the logs printed by both r2 and r3. It's likely that
 
 .. _eclat-script-eip:
 
-eCLAT script eip_pt.eclat
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+eCLAT script for Path Tracing eip_pt.eclat
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
     # eip_pt
