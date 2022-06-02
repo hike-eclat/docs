@@ -11,7 +11,7 @@ Experiment on EIP (Extensible In-band Processing)
   |                  |      |                  |      |                  |      |                  |
   +------------------+      +------------------+      +------------------+      +------------------+
 
-In this experiment, we set up a testbed with a different topology. We have four routers connected as shown in the figure above.
+In this experiment, we set up a testbed with a different topology. We have four routers (running in separated network namespaces) connected as shown in the figure above.
 The testbed will create a tmux session with multiple windows. One for each router, plus 1 more window for routers r2 and r3 where the eCLAT daemon will be running. Lastly, a MAIN window, a MAPS window and a DEBUG window.
 
 You can kill the entire session by running: ``cd /opt/eclat-daemon && scripts/kill-tmux.sh``. But you don't need to manually kill the session before starting a new one, as this operation will be performed automatically.
