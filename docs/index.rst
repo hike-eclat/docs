@@ -16,6 +16,7 @@ Welcome to HIKe - eCLAT documentation
    quickstart
    installation
    experiments
+   eclat_doc
    hike_programs
    tutorials
    examples
