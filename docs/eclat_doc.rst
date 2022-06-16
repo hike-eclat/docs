@@ -71,6 +71,17 @@ eCLAT data type eBPF (C) data type
 eCLAT operators
 -------------------------------
 
+Unary Operators 
+^^^^^^^^^^^^^^^^^
+
+============ ============================= =========== 
+ Operator     Name                          Example    
+============ ============================= =========== 
+ \-           Negation                      \- x
+ not          Logical NOT                   not x      
+ ~            Bitwise NOT                   ~ x        
+============ ============================= =========== 
+
 Binary Operators 
 ^^^^^^^^^^^^^^^^^
 
@@ -95,17 +106,6 @@ Binary Operators
  &            Bitwise AND                   x & y      
  \|            Bitwise OR                    x | y      
  ^            Bitwise XOR                   x ^ y      
-============ ============================= =========== 
-
-Unary Operators 
-^^^^^^^^^^^^^^^^^
-
-============ ============================= =========== 
- Operator     Name                          Example    
-============ ============================= =========== 
- \-           Negation                      \- x
- not          Logical NOT                   not x      
- ~            Bitwise NOT                   ~ x        
 ============ ============================= =========== 
 
 Formal specs of eCLAT language 
