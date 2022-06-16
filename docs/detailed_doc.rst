@@ -164,7 +164,7 @@ Unary Operators
 
 
 Supported HIKe VM instructions
-==============================
+================================
 
 .. code-block:: text
 
