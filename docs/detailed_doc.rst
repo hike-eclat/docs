@@ -109,6 +109,9 @@ a program that parses the headers after the basic header may decide to advance c
 eCLAT data types and operators 
 ------------------------------
 
+Data Types
+^^^^^^^^^^^^^^^^^
+
 =============== ==================
 eCLAT data type eBPF (C) data type
 =============== ==================
@@ -122,6 +125,42 @@ eCLAT data type eBPF (C) data type
    s8             __s8
 =============== ==================
 
+Binary Operators 
+^^^^^^^^^^^^^^^^^
+
+============ ============================= =========== 
+ Operator     Name                          Example    
+============ ============================= =========== 
+ \+            Addition                      x + y      
+ \-            Subtraction                   x - y      
+ \*            Multiplication                x * y      
+ /            Division                      x / y      
+ %            Modulus                       x % y      
+ <<           Left bit shift (zero fill)    x << y     
+ >>           Right bit shift (zero fill)   x >> y     
+ >=           Greater than or equal         x >= y     
+ <=           Less then or equal            x <= y     
+ >            Greater than                  x > y      
+ <            Less than                     x < y      
+ ==           Equal                         x == y     
+ !=           Not equal                     x != y     
+ and          Logical AND                   x and y    
+ or           Logical OR                    x or y     
+ &            Bitwise AND                   x & y      
+ \|            Bitwise OR                    x | y      
+ ^            Bitwise XOR                   x ^ y      
+============ ============================= =========== 
+
+Unary Operators 
+^^^^^^^^^^^^^^^^^
+
+============ ============================= =========== 
+ Operator     Name                          Example    
+============ ============================= =========== 
+ \-           Negation                      \- x
+ not          Logical NOT                   not x      
+ ~            Bitwise NOT                   ~ x        
+============ ============================= =========== 
 
 
 Supported HIKe VM instructions
