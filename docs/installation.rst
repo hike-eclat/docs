@@ -2,8 +2,6 @@
 Installation
 ============
 
-Note: the repositories linked in this page are NOT anonymized.
-
 The instructions on how to build a docker container with the full test and development environment for HIKe / eCLAT are available here: `eclat-docker  <https://github.com/netgroup/eclat-docker>`_. 
 
 The main source code repositories are:
