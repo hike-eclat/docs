@@ -1,7 +1,7 @@
-HIKe programs documentation
+HIKe packages documentation
 ===========================
 
-Here you can find the documentation of HIKe programs from the point of view of the eCLAT developer.
+Here you can find the documentation of HIKe packages and programs from the point of view of the eCLAT developer.
 
 The HIKe programs are organized in packages. Already available packages are listed hereafter, developers can
 add more packages.
@@ -22,11 +22,11 @@ Default package with basic programs
 
 hike_pass()
 ^^^^^^^^^^^
-Take the decision to pass the packet to the Linux kernel for further processing. The packet is not processed by the other programs in the eCLAT chain.
+Take the decision to pass the packet to the Linux kernel for further processing. The packet is not processed by the next programs in the eCLAT chain.
 
 hike_drop()
 ^^^^^^^^^^^
-Take the decision to drop the packet. The packet is not processed by the other programs in the eCLAT chain.
+Take the decision to drop the packet. The packet is not processed by the next programs in the eCLAT chain.
 
 monitor(u64 ``event``)
 ^^^^^^^^^^^
@@ -46,6 +46,32 @@ it is not already present;
 
 ``action`` == LOOKUP_AND_CLEAN: add the packet to the
 hashset if it is not already present and clean up an expired entry.
+
+l2xcon()
+^^^^^^^^^^^
+
+This program is used to redirect a packet at layer 2 (i.e. from one layer 2 interface to another layer 2 interface).
+
+It looks up the incoming layer 2 interface id in a map that returns the outgoing layer 2 interface id.
+The map is called ``l2xcon_map`` and it needs to be configured beforehand.
+
+`stamp_xcon_map.py <https://github.com/netgroup/hikepkg-stamp/blob/main/python/stamp_xcon_map.py>` provides an example on how it is possible to modify the ``l2xcon_map`` map programmatically using python
+
+using the command line the map can be updated as follows:
+
+.. code-block:: shell
+
+   bpftool map update pinned /sys/fs/bpf/maps/hike_default/l2xcon/l2xcon_map key hex {key_string} value hex {value_string}
+   bpftool map update pinned /sys/fs/bpf/maps/hike_default/l2xcon/l2xcon_map key hex 01 00 00 00 value hex 02 00 00 00
+
+The l2xcon() program does not return the flow of execution to the eCLAT chain, i.e. the packet is not processed by the next programs in the eCLAT chain.
+
+ip6_kroute()
+^^^^^^^^^^^
+
+This program routes an IPv6 packet with a lookup in the kernel routing table.
+
+The ip6_kroute() program does not return the flow of execution to the eCLAT chain, i.e. the packet is not processed by the next programs in the eCLAT chain.
 
 meter package
 ---------
