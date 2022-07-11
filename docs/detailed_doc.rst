@@ -12,6 +12,15 @@ in the folder ``eclat_daemon/components/programs/package_name``
 The include files with extension ``.h`` are read from the same folder if present, if they are 
 not available in the same folder, they are read from ``eclat_daemon/hike_v3/src``
 
+Registering packages
+-------------------------------
+
+The packages need to be registered in the mongoDB which is exposed here http://eclat.netgroup.uniroma2.it/packages
+
+The link is this one: https://cloud.mongodb.com/v2/61d8710bbff1860d02c04427#clusters
+
+Web APIs for updating the DB are under development, for the time being, please contact the maintaners!
+
 
 eCLAT transpiler labels (resolved at load time) 
 --------------------------------------------
