@@ -4,9 +4,10 @@ eCLAT documentation
 eCLAT client command line 
 ------------------------------
 
-python eclat.py --load $ECLAT_SCRIPT --define DEVNAME eth0 --package test
+.. code-block:: shell
 
-python eclat.py --fetch $ECLAT_SCRIPT --define DEVNAME eth0 --package test
+   python eclat.py --load $ECLAT_SCRIPT --define DEVNAME eth0 --package test
+   python eclat.py --fetch $ECLAT_SCRIPT --define DEVNAME eth0 --package test
 
 
 eCLAT instructions 
