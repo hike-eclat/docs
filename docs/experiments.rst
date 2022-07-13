@@ -7,3 +7,4 @@ Example experiments
 
 .. include:: experiment_eip.rst
 
+.. include:: experiment_stamp.rst
