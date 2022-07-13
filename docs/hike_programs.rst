@@ -165,15 +165,36 @@ stamp package
 
 Simple Two-Way Active Measurement Protocol with HIKe
 
-stamp_full()
-^^^^^^^^^^^^^^^^^
+Links:
 
-stamp_lite()
-^^^^^^^^^^^^^^^^^
+- `Github repo <https://github.com/netgroup/hikepkg-stamp>`_
+- `Experiments doc <https://hike-eclat.readthedocs.io/en/latest/experiments.html#>`_
+- `STAMP RFC 8972 <https://datatracker.ietf.org/doc/rfc8972/>`_
 
 stamp_mono()
 ^^^^^^^^^^^^^^^^^
+Monolithic implementation of STAMP reflector in eBPF.
+STAMP packets are processed using data written in maps.
+Maps should be configured by a controller with data relative to:
 
+- time (delta between boot time and real time is stored because the eBPF program can only access boot time);
+- layer 2 MAC addresses;
+- layer 3 IP addresses;
+- layer 4 UDP ports;
+- layer 2 interfaces to perform cross connect.
+
+stamp()
+^^^^^^^^^^^^^^^^^
+Implementation of STAMP reflector in eBPF. Only the part relative to the actual STAMP packet contents plus the layer 2/3 addresses and the layer 4 ports.
+Filtering, UDP checksum calculation, layer 2 cross connect and XDP pass are missing.
+
+filter()
+^^^^^^^^^^^^^^^^^
+Checks if there is UDP and if destination port is STAMP, then returns 0. Otherwise returns 1.
+
+udp_checksum()
+^^^^^^^^^^^^^^^^^
+Calculates UDP checksum of the packet.
 
 eip package
 -----------------
