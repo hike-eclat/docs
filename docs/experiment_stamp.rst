@@ -20,7 +20,6 @@ eCLAT script for STAMP stamp.eclat
   from programs.stamp import stamp_mono
   from loaders.hike_default import ip6_simple_classifier
 
-  #TODO swap eth and IPv6 src and dst, decrement TTL, l2redirect on same interface
   # send all IPv6 packets to our chain
   ip6_simple_classifier[ipv6_simple_classifier_map] = { (0): (stamp) }
   ip6_simple_classifier.attach('DEVNAME', 'xdp')
