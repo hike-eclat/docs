@@ -12,6 +12,7 @@ add more packages.
 - `info <#info-package>`_ : retrieve information from packet
 - `alt_mark <#alt-mark-package>`_ : alternate marking in HIKe
 - `tutorial <#tutorial-package>`_ : Deep Packet Inspection with a tutorial purpose
+- `stamp <#stamp-package>`_ : Simple Two-Way Active Measurement Protocol with HIKe
 - `eip <#eip-package>`_ : prototype implementation of Extensible In-band Processing (EIP)
 
 
@@ -158,6 +159,20 @@ tutorial package
 Deep Packet Inspection with a tutorial purpose (see `Github repo <https://github.com/netgroup/hikepkg-tutorial>`_)
 
 (work in progress)
+
+stamp package
+-----------------
+
+Simple Two-Way Active Measurement Protocol with HIKe
+
+stamp_full()
+^^^^^^^^^^^^^^^^^
+
+stamp_lite()
+^^^^^^^^^^^^^^^^^
+
+stamp_mono()
+^^^^^^^^^^^^^^^^^
 
 
 eip package
