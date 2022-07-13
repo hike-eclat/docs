@@ -12,9 +12,9 @@ eCLAT script for STAMP stamp.eclat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-  # time
+  # stamp
   # 
-  # (time.eclat)
+  # (stamp.eclat)
   #
 
   from programs.stamp import stamp_mono
