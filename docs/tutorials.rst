@@ -5,9 +5,7 @@ Tutorials
 Dataplane programming with eBPF: architecture and tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tutorial @ NETSOFT 2022
-
-8th IEEE International Conference on Network Softwarization - 1st July 2022 // Milan, Italy
+Tutorial @ NETSOFT 2022, 8th IEEE International Conference on Network Softwarization - 1st July 2022 // Milan, Italy
 
 Stefano Salsano, Lorenzo Bracciale
 
@@ -16,7 +14,8 @@ This tutorial first introduces eBPF, then it presents the eCLAT framework.
 `View on slideshare <https://www.slideshare.net/stefanosalsano/dataplane-programming-with-ebpf-architecture-and-tools>`_
 
 ::
-
+   TABLE OF CONTENT
+   
    Part 1.1  
         Software routers / packet processing devices: design choices
         Acceleration frameworks
