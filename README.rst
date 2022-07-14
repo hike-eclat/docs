@@ -1,4 +1,4 @@
-HIKe eCLAT Documentation
+eCLAT HIKe  Documentation
 ================================
 
 https://hike-eclat.readthedocs.io/en/latest/
