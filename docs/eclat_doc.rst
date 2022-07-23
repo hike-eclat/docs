@@ -4,10 +4,24 @@ eCLAT documentation
 eCLAT client command line 
 ------------------------------
 
+``python eclat.py [-h] {load,quit,fetch,fetch-pkg,read-map} ...``
+  * **load**:                Load an eclat script
+  * **quit**:                Close eCLATd
+  * **fetch**:               Download all the packages required by an eCLAT script
+  * **fetch-pkg**:           Make eCLATd download a specific package
+  * **read-map**:            Make eCLATd download a specific package
+
+
+*Examples*
+
 .. code-block:: shell
 
-   python eclat.py --load $ECLAT_SCRIPT --define DEVNAME eth0 --package test
-   python eclat.py --fetch $ECLAT_SCRIPT --define DEVNAME eth0 --package test
+   python eclat.py load $ECLAT_SCRIPT --define DEVNAME eth0 
+   python eclat.py fetch $ECLAT_SCRIPT --define DEVNAME eth0
+   python eclat.py fetch-pkg $MY_PACKAGE
+   python eclat.py read-map $MY_MAP
+   python eclat.py read-map $MY_MAP --lookup $MY_KEY
+   
 
 
 eCLAT instructions 
