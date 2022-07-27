@@ -18,6 +18,8 @@ eCLAT (eBPF Chains Language And Toolset) is a high level language and programmin
 Technical reports and scientific papers
 -----
 
-`HIKe / eCLAT Technical Report "eBPF Programming Made Easy with HIKe and eCLAT" <https://github.com/hike-eclat/docs/raw/master/tech-docs/tr-hike-eclat.pdf>`_ (21 pages)
+A. Mayer, L. Bracciale, P. Lungaroni, P. Loreti, S. Salsano, G. Bianchi, "eBPF Programming Made Easy with HIKe and eCLAT" <https://github.com/hike-eclat/docs/raw/master/tech-docs/eclat.pdf>`_ Submitted paper
+
+`Long Technical Report "eBPF Programming Made Easy with HIKe and eCLAT" <https://github.com/hike-eclat/docs/raw/master/tech-docs/tr-hike-eclat.pdf>`_ (21 pages)
 
 `HIKe / eCLAT scientific paper "eBPF Programming Made Easy with HIKe and eCLAT" <https://github.com/hike-eclat/docs/raw/master/tech-docs/hike_eclat.pdf>`_ (13 pages)
