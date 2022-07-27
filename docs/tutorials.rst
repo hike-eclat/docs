@@ -11,7 +11,7 @@ Stefano Salsano, Lorenzo Bracciale
 
 This tutorial first introduces eBPF, then it presents the eCLAT framework.
 
-`View on slideshare <https://www.slideshare.net/stefanosalsano/dataplane-programming-with-ebpf-architecture-and-tools>`_
+`View the slides on slideshare <https://www.slideshare.net/stefanosalsano/dataplane-programming-with-ebpf-architecture-and-tools>`_
 
 ::
 
