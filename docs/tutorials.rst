@@ -13,6 +13,11 @@ This tutorial first introduces eBPF, then it presents the eCLAT framework.
 
 `View the slides on slideshare <https://www.slideshare.net/stefanosalsano/dataplane-programming-with-ebpf-architecture-and-tools>`_
 
+
+`Watch the video recording : Part 1 <https://youtu.be/uq1nmHTZgd4>`_
+ 
+`Watch the video recording : Part 2 <https://youtu.be/fP3yZYnN1T8>`_
+
 ::
 
    TABLE OF CONTENT
