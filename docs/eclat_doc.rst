@@ -17,7 +17,7 @@ eCLAT client command line
 .. code-block:: shell
 
    python eclat.py load $ECLAT_SCRIPT --define DEVNAME eth0 
-   python eclat.py fetch $ECLAT_SCRIPT --define DEVNAME eth0
+   python eclat.py fetch $ECLAT_SCRIPT
    python eclat.py fetch-pkg $MY_PACKAGE
    python eclat.py read-map $MY_MAP
    python eclat.py read-map $MY_MAP --lookup $MY_KEY
