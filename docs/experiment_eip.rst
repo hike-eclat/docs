@@ -11,11 +11,10 @@ Experiment on EIP (Extensible In-band Processing)
   |                  |      |                  |      |                  |      |                  |
   +------------------+      +------------------+      +------------------+      +------------------+
 
-In this experiment, we set up a testbed with a different topology. We have four routers (running in separated network namespaces) connected as shown in the figure above.
-The testbed will create a tmux session with multiple windows. One for each router, plus 1 more window for routers r2 and r3 where the eCLAT daemon will be running. Lastly, a MAIN window, a MAPS window and a DEBUG window.
+In this experiment, we set up a testbed with four routers (running in separated network namespaces) connected as shown in the figure above.
+The testbed will create a tmux session with multiple windows. In particular, we have one window for each router, plus 1 more window for routers r2 and r3 where the eCLAT daemon will be running. Lastly, a MAIN window, a MAPS window and a DEBUG window.
 
 You can kill the entire session by running: ``cd /opt/eclat-daemon && scripts/kill-tmux.sh``. But you don't need to manually kill the session before starting a new one, as this operation will be performed automatically.
-
 
 On this topology we can run experiments to test a few EIP Information Elements (IEs).
 A packet containing EIP data is sent from r1 to r4. The data is processed by nodes r2 and r3 before reaching the destination.
@@ -28,7 +27,7 @@ You can run the testbed with the command:
 
 .. code-block:: shell
 
-  cd /opt/eclat-daemon && testbed/basic_testbed.sh
+  cd /opt/eclat-daemon && components/eip/testbed/pt_eip_testbed.sh
 
 This will deploy the :ref:`eCLAT script for Path Tracing<eclat-script-eip>` on routers r2 and r3.
 You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
