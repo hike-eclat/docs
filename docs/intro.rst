@@ -22,3 +22,4 @@ A.Mayer, L.Bracciale, P.Lungaroni, P.Loreti, S.Salsano, G.Bianchi, "`eBPF Progra
 
 Long Technical Report "`eBPF Programming Made Easy with HIKe and eCLAT <https://github.com/hike-eclat/docs/raw/master/tech-docs/tr-hike-eclat.pdf>`_" (21 pages)
 
+A. Mayer, "`Network programmability in Software Routers <https://github.com/hike-eclat/docs/raw/master/tech-docs/mayer_phd_thesis.pdf>`_"
