@@ -27,7 +27,7 @@ You can run the testbed with the command:
 
 .. code-block:: shell
 
-  cd /opt/eclat-daemon && components/eip/testbed/pt_eip_testbed.sh
+  cd /opt/eclat-daemon && testbed/pt_eip_testbed.sh
 
 This will deploy the :ref:`eCLAT script for Path Tracing<eclat-script-eip>` on routers r2 and r3.
 You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
