@@ -21,13 +21,27 @@ A packet containing EIP data is sent from r1 to r4. The data is processed by nod
 
 The eBPF code can be found at https://github.com/netgroup/hikepkg-eip
 
+Beforehand, you have to download the EIP package following these instructions:
+
+.. code-block:: shell
+
+  cd /opt/eclat-daemon && testbed/development_only_daemon.sh
+  
+In the TMUX CLIENT1 window, run:
+
+.. code-block:: shell
+
+   python eclat.py fetch_pkg eip
+
+Exit from the tmux session with ``Ctrl-b`` ``d``, now you can proceed with the examples below.
+
 Path Tracing example
 ^^^^^^^^^^^^^^^^^^^^^^^^
 You can run the testbed with the command:
 
 .. code-block:: shell
 
-  cd /opt/eclat-daemon && testbed/pt_eip_testbed.sh
+  cd /opt/eclat-daemon && components/eip/testbed/pt_eip_testbed.sh
 
 This will deploy the :ref:`eCLAT script for Path Tracing<eclat-script-eip>` on routers r2 and r3.
 You can re-attach to the tmux by running the script: ``cd /opt/eclat-daemon && scripts/resume-tmux.sh``.
