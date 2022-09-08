@@ -12,6 +12,13 @@ in the folder ``eclat_daemon/components/programs/package_name``
 The include files with extension ``.h`` are read from the same folder if present, if they are 
 not available in the same folder, they are read from ``eclat_daemon/hike_v3/src``
 
+Creating new packages
+-------------------------------
+
+A package is a collection of hike programs, eclat chains, shell scripts and python programs, hosted in a github repository. By convention, the github repository name of a package foo is called hikepkg-foo.
+
+To create a new package you should use the hikepkg-template github repository hosted in https://github.com/netgroup/hikepkg-template. You can fork this repository and call it hikepkg-foo, where foo is the name of your package.
+
 Registering packages
 -------------------------------
 
