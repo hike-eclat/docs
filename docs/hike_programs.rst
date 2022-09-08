@@ -168,7 +168,7 @@ Simple Two-Way Active Measurement Protocol with HIKe
 Links:
 
 - `Github repo <https://github.com/netgroup/hikepkg-stamp>`_
-- `Experiments doc <https://hike-eclat.readthedocs.io/en/latest/experiments.html#>`_
+- `Experiments doc <https://hike-eclat.readthedocs.io/en/latest/experiments.html#experiment-on-stamp-simple-two-way-active-measurement-protocol>`_
 - `STAMP RFC 8972 <https://datatracker.ietf.org/doc/rfc8972/>`_
 
 stamp_mono()
