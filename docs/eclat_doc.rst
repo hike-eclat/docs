@@ -9,7 +9,7 @@ eCLAT client command line
   * **quit**:                Close eCLATd
   * **fetch**:               Download all the packages required by an eCLAT script
   * **fetch-pkg**:           Make eCLATd download a specific package
-  * **read-map**:            Make eCLATd download a specific package
+  * **read-map**:            reads a map and displays its content
 
 
 *Examples*
